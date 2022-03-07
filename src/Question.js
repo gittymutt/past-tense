@@ -12,7 +12,7 @@ export default function Question() {
         let sound = new Audio(require(`./sounds/${word}.m4a`))
         sound.play()
     }
-    let data = [1]
+    let data = [1, 2]
     let questionData = data.map((d) =>{
         return (
             <section className="question">
