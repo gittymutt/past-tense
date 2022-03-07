@@ -1,8 +1,7 @@
 import React from "react"
-import AudioPlayer from 'react-h5-audio-player';
-import 'react-h5-audio-player/lib/styles.css';
-import play from "./sounds/play.m4a"
 import Recorder from "./Recorder"
+import nextId from "react-id-generator";
+
 // import data from "./data.js"
 
 // https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder
@@ -13,9 +12,11 @@ export default function Question() {
         sound.play()
     }
     let data = [1, 2]
+
     let questionData = data.map((d) =>{
+        let id = nextId("q")
         return (
-            <section className="question">
+            <section key={id} className="question">
                 <button onClick={() => speak("play")} >play</button>
                 <button onClick={() => speak("played")}>played</button>
                 <Recorder />
