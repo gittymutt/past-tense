@@ -16,10 +16,16 @@ export default function Question() {
 
     function nextQuestion() {
         setQNo((oldValue) => oldValue+1)
+            // console.log(oldValue, data.length-2)
+        //     if (oldValue < data.length) return oldValue+1 
+        // })
+    }
+
+    function previousQuestion() {
+        setQNo((oldValue) => oldValue-1)
     }
     
     let questionData = data.map((d) =>{
-        console.log(d.baseForm)
         let id = nextId("q")
         
         return (
@@ -29,12 +35,14 @@ export default function Question() {
                 <button onClick={() => speak(d.pastFormSf)}>{d.pastForm}</button>
                 <Recorder />
             </section>
-            <button onClick={nextQuestion}>Next</button>
+            
+            {qNo >= 1 && <button onClick={previousQuestion}>Back</button>}
+            {qNo < data.length-1 && <button onClick={nextQuestion}>Next</button>}
             </>
         )
     })
     let currentQuestion = questionData[qNo]
     return (<>
-    <p>Question number {qNo}</p>
+    <p>Question number {qNo+1}</p>
     {currentQuestion}</>   )
 }

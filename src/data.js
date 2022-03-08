@@ -6,7 +6,7 @@ const data = [
         pastFormSf: "played.mp3"
      },
 
-     /*
+     
      {
         baseForm: "stop",
         baseFormSf: "stop.mp3",
@@ -171,7 +171,7 @@ const data = [
      },
      
      
-     */
+     
      
      
      
