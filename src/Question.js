@@ -1,7 +1,7 @@
 import React from "react"
 import Recorder from "./Recorder"
 import nextId from "react-id-generator";
-
+import './Question.css'
 import data from "./data.js"
 
 // https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder
@@ -36,7 +36,7 @@ export default function Question() {
                 <Recorder />
             </section>
             
-            {qNo >= 1 && <button onClick={previousQuestion}>Back</button>}
+            {qNo >= 1 && <button className="next-buttons" onClick={previousQuestion}>Back</button>}
             {qNo < data.length-1 && <button onClick={nextQuestion}>Next</button>}
             </>
         )
