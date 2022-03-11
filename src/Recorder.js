@@ -9,6 +9,8 @@ export default function Recorder() {
     React.useEffect(() => {
       navigator.mediaDevices.getUserMedia({audio:true})
         .then(stream => {handlerFunction(stream)})
+        .catch(e => alert("There was an error with the audio: " + e.name +
+              "\n" + e.message))
         
         function handlerFunction(stream) {
             rec.current = new MediaRecorder(stream);
@@ -16,7 +18,7 @@ export default function Recorder() {
               let audioChunks = []
               audioChunks.push(e.data);
               if (rec.current.state === "inactive"){
-                let blob = new Blob(audioChunks,{type:'audio/mpeg-3'});
+                let blob = new Blob(audioChunks,{type:'audio/mp3'});
                 sendData(blob)
               }
             }

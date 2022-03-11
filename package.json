@@ -1,5 +1,6 @@
 {
   "name": "past-tense",
+  "homepage": "https://petersenglish.nyc/past-tense/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
