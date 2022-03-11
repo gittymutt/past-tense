@@ -1,12 +1,16 @@
 import React from "react"
+import './Recorder.css'
 
 export default function Recorder() {
     const [recordOn, setRecordOn] = React.useState(false)
+    const [isRecorded, setIsRecorded] = React.useState(false)
+
     const recordedAudio = React.useRef(null)
     const rec = React.useRef(null)
     const audio = React.useRef(null)
 
     React.useEffect(() => {
+
       navigator.mediaDevices.getUserMedia({audio:true})
         .then(stream => {handlerFunction(stream)})
         .catch(e => alert("There was an error with the audio: " + e.name +
@@ -26,6 +30,7 @@ export default function Recorder() {
 
         function sendData(blob) {
           const audioUrl = URL.createObjectURL(blob)
+          setIsRecorded(true)
           audio.current = new Audio(audioUrl);
           audio.current.play();
 
@@ -48,10 +53,13 @@ export default function Recorder() {
     return (
         <>
           <p>
-              <button onClick={toggleRecord}>
+              <button  onClick={toggleRecord}>
                 {recordOn ? "Click to Stop Recording" : "Click to start recording"}
               </button>
-              <button onClick={playSample}>Play</button>
+              <button
+                className={`${isRecorded ? "" : "play-button-hide"}`} 
+                onClick={playSample}>Play
+              </button>
           </p>
         </>
     )
