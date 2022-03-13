@@ -1,3 +1,21 @@
+.play-button {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.button-icon svg   {
+    width: 5em;
+}
+
+.button-icon svg path {
+    fill: gray;
+}
+
+.button-icon-on svg path {
+    fill: red;
+}
+
 .play-button-hide {
     visibility: hidden;
 }
