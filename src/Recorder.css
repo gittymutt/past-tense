@@ -12,8 +12,12 @@
     fill: gray;
 }
 
-.button-icon-on svg path {
+.record-on svg path {
     fill: red;
+}
+
+.play-on svg path {
+    fill: green;
 }
 
 .play-button-hide {
