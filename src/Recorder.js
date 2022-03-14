@@ -37,8 +37,8 @@ export default function Recorder() {
             setIsPlaying(false)
           })
 
-          audio.current.play();
-          setIsPlaying(true)
+          // audio.current.play();
+          // setIsPlaying(true)
         }
     }, [])
 

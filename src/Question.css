@@ -17,14 +17,18 @@
 
   
 
-  footer {
+  .next-buttons-group {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    border: solid;
 }
 .next-buttons {
     margin-right: 20px;
   
 
 }
-  
+
+.hide-button {
+    visibility: hidden;
+}

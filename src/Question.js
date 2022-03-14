@@ -15,14 +15,24 @@ export default function Question() {
     }
 
     function nextQuestion() {
-        setQNo((oldValue) => oldValue+1)
-            // console.log(oldValue, data.length-2)
-        //     if (oldValue < data.length) return oldValue+1 
-        // })
+        setQNo((oldValue) => {
+            if (oldValue < data.length-1) {
+                return oldValue+1
+            } else {
+                return oldValue
+            }
+        })
+           
     }
 
     function previousQuestion() {
-        setQNo((oldValue) => oldValue-1)
+        setQNo((oldValue) => {
+            if (qNo >= 1) {
+                return oldValue-1
+            } else {
+                return oldValue
+            }
+        })
     }
     
     let questionData = data.map((d) =>{
@@ -31,10 +41,21 @@ export default function Question() {
         return (
             <>
             <p>Question number {qNo+1}</p>
-            <footer>
-                {qNo >= 1 && <button className="next-buttons" onClick={previousQuestion}>Back</button>}
-                {qNo < data.length-1 && <button className="next-buttons" onClick={nextQuestion}>Next</button>}
-            </footer>
+            <div className="next-buttons-group">
+                {/* {qNo >= 1 && <button className="next-buttons" onClick={previousQuestion}>Back</button>} */}
+                <button 
+                    className={`next-buttons ${qNo >= 1 ? "" : "hide-button"}`} 
+                    onClick={previousQuestion}
+                >Back</button>
+
+                {/* {qNo < data.length-1 && <button className="next-buttons" onClick={nextQuestion}>Next</button>} */}
+                {<button 
+                    className={`next-buttons ${qNo < data.length-1 ? "" : "hide-button"}`}  
+                    onClick={nextQuestion}
+                 >Next</button>
+                }
+
+            </div>
             <section key={id} className="question">
                 <button onClick={() => speak(d.baseFormSf)} >{d.baseForm}</button>
                 <button onClick={() => speak(d.pastFormSf)}>{d.pastForm}</button>
