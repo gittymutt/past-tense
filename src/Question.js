@@ -42,17 +42,14 @@ export default function Question() {
             <>
             <p>Question number {qNo+1}</p>
             <div className="next-buttons-group">
-                {/* {qNo >= 1 && <button className="next-buttons" onClick={previousQuestion}>Back</button>} */}
                 <button 
                     className={`next-buttons ${qNo >= 1 ? "" : "hide-button"}`} 
                     onClick={previousQuestion}
-                >Back</button>
-
-                {/* {qNo < data.length-1 && <button className="next-buttons" onClick={nextQuestion}>Next</button>} */}
+                >&lt; Back</button>
                 {<button 
                     className={`next-buttons ${qNo < data.length-1 ? "" : "hide-button"}`}  
                     onClick={nextQuestion}
-                 >Next</button>
+                 >Next &gt;</button>
                 }
 
             </div>

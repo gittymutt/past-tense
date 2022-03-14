@@ -1,8 +1,15 @@
 
 
-.question button {
+/* prevent ios from rounding buttons */
+input:not([type="radio"]):not([type="checkbox"]) {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+button {
     font-size: 4vh;
 }
+
 .question {
     display: flex;
     flex-direction: column;
@@ -11,24 +18,28 @@
     max-width: 500px;
 }
 
-  .question button {
-      padding: 20px;
-  }
-
-  
-
-  .next-buttons-group {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    border: solid;
+.question button {
+    padding: 20px;
 }
+
+.question > button:first-child {
+    margin-bottom: 20px;
+}
+
+.next-buttons-group {
+display: flex;
+flex-direction: row;
+justify-content: center;
+
+}
+
+.next-buttons:first-child {
+    margin-right: 10%;
+}
+
 .next-buttons {
-    margin-right: 20px;
-  
-
+    padding: 10px 30px;
 }
-
 .hide-button {
     visibility: hidden;
 }
