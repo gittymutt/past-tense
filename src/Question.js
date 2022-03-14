@@ -51,7 +51,7 @@ export default function Question() {
         if (isRegular) {
             return word.pastForm.trim().slice(-2) === "ed"
         } else {
-            return word.pastForm.trim().slice(-2) != "ed"
+            return word.pastForm.trim().slice(-2) !== "ed"
         }
     }
 
