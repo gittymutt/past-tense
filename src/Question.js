@@ -8,6 +8,7 @@ import data from "./data.js"
 
 export default function Question() {
     const [qNo, setQNo] = React.useState(0)
+    const [isRegular, setIsRegular] = React.useState(true)
     const noQuestions = React.useRef(0)
 
     function speak(word) {
@@ -36,8 +37,22 @@ export default function Question() {
         })
     }
 
+    function chooseVerbType(e) {
+        console.log(e.target.name, e.target.value)
+        if (e.target.value ==="regular") {
+            setIsRegular(true)
+        } else {
+            setIsRegular(false)
+        }
+        setQNo(0)
+    }
+
     function removeEd(word) {
-        return word.pastForm.trim().slice(-2) === "ed"
+        if (isRegular) {
+            return word.pastForm.trim().slice(-2) === "ed"
+        } else {
+            return word.pastForm.trim().slice(-2) != "ed"
+        }
     }
 
     let filteredData = data.filter(removeEd)
@@ -48,7 +63,8 @@ export default function Question() {
         
     return (
         <>
-        <p>Question number {qNo+1}</p>
+        <h1>Question {qNo+1}</h1>
+        <p>{isRegular ? "Regular" : "Irregular"} verbs</p>
         <div className="next-buttons-group">
             <button 
                 className={`next-buttons ${qNo >= 1 ? "" : "hide-button"}`} 
@@ -66,8 +82,11 @@ export default function Question() {
             <button onClick={() => speak(d.pastFormSf)}>{d.pastForm}</button>
             <Recorder />
         </section>
-        
-        
+        <input onChange={chooseVerbType} type="radio" id="regular" name="isRegular" value="regular" />
+        <label htmlFor="regular">Regular Verbs</label>
+        <input onChange={chooseVerbType} type="radio" id="irregular" name="isRegular" value="irregular" />
+        <label htmlFor="irregular">Irregular</label>
+                
         </>
     )
     })
