@@ -1,11 +1,24 @@
-.play-button {
+.button-container {
     display: flex;
-    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
 }
 
+.button-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
 
 .button-icon svg   {
-    width: 5em;
+    width: 4em;
+    margin-bottom: 10px;
+    /* max-height: 100px; */
+}
+
+.button-icon span {
+    /* font-size: large; */
 }
 
 .button-icon svg path {

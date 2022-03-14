@@ -30,19 +30,23 @@ export default function Question() {
         
         return (
             <>
+            <p>Question number {qNo+1}</p>
+            <footer>
+                {qNo >= 1 && <button className="next-buttons" onClick={previousQuestion}>Back</button>}
+                {qNo < data.length-1 && <button className="next-buttons" onClick={nextQuestion}>Next</button>}
+            </footer>
             <section key={id} className="question">
                 <button onClick={() => speak(d.baseFormSf)} >{d.baseForm}</button>
                 <button onClick={() => speak(d.pastFormSf)}>{d.pastForm}</button>
                 <Recorder />
             </section>
             
-            {qNo >= 1 && <button className="next-buttons" onClick={previousQuestion}>Back</button>}
-            {qNo < data.length-1 && <button onClick={nextQuestion}>Next</button>}
+            
             </>
         )
     })
     let currentQuestion = questionData[qNo]
     return (<>
-    <p>Question number {qNo+1}</p>
+    
     {currentQuestion}</>   )
 }
