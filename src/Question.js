@@ -49,9 +49,11 @@ export default function Question() {
 
     function removeEd(word) {
         if (isRegular) {
-            return word.pastForm.trim().slice(-2) === "ed"
+            return word.pastForm.trim().slice(-2) === "ed" &&
+                word.pastForm.trim().slice(-3) !== "fed"
         } else {
-            return word.pastForm.trim().slice(-2) !== "ed"
+            return word.pastForm.trim().slice(-3) === "fed" ||
+                word.pastForm.trim().slice(-2) !== "ed" 
         }
     }
 

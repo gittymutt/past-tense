@@ -330,6 +330,270 @@ const data = [
       baseFormSf: "forgive.mp3",
       pastForm: "forgave",
       pastFormSf: "forgave.mp3"
+     },
+     {
+      baseForm: "get",
+      baseFormSf: "get.mp3",
+      pastForm: "got",
+      pastFormSf: "got.mp3"
+     },
+     {
+      baseForm: "give",
+      baseFormSf: "give.mp3",
+      pastForm: "gave",
+      pastFormSf: "gave.mp3"
+     },
+     {
+      baseForm: "go",
+      baseFormSf: "go.mp3",
+      pastForm: "went",
+      pastFormSf: "went.mp3"
+     },
+     {
+      baseForm: "grow",
+      baseFormSf: "grow.mp3",
+      pastForm: "grew",
+      pastFormSf: "grew.mp3"
+     },
+     {
+      baseForm: "have",
+      baseFormSf: "have.mp3",
+      pastForm: "had",
+      pastFormSf: "had.mp3"
+     },
+     {
+      baseForm: "hear",
+      baseFormSf: "hear.mp3",
+      pastForm: "heard",
+      pastFormSf: "heard.mp3"
+     },
+     {
+      baseForm: "hide",
+      baseFormSf: "hide.mp3",
+      pastForm: "hid",
+      pastFormSf: "hid.mp3"
+     },
+     {
+      baseForm: "hit",
+      baseFormSf: "hit.mp3",
+      pastForm: "hit",
+      pastFormSf: "hit.mp3"
+     },
+     {
+      baseForm: "hold",
+      baseFormSf: "hold.mp3",
+      pastForm: "held",
+      pastFormSf: "held.mp3"
+     },
+     {
+      baseForm: "hurt",
+      baseFormSf: "hurt.mp3",
+      pastForm: "hurt",
+      pastFormSf: "hurt.mp3"
+     },
+     {
+      baseForm: "keep",
+      baseFormSf: "keep.mp3",
+      pastForm: "kept",
+      pastFormSf: "kept.mp3"
+     },
+     {
+      baseForm: "know",
+      baseFormSf: "know.mp3",
+      pastForm: "knew",
+      pastFormSf: "knew.mp3"
+     },
+     {
+      baseForm: "leave",
+      baseFormSf: "leave.mp3",
+      pastForm: "left",
+      pastFormSf: "left.mp3"
+     },
+     {
+      baseForm: "lose",
+      baseFormSf: "lose.mp3",
+      pastForm: "lost",
+      pastFormSf: "lost.mp3"
+     },
+     {
+      baseForm: "make",
+      baseFormSf: "make.mp3",
+      pastForm: "made",
+      pastFormSf: "made.mp3"
+     },
+     {
+      baseForm: "meet",
+      baseFormSf: "meet.mp3",
+      pastForm: "met",
+      pastFormSf: "met.mp3"
+     },
+     {
+      baseForm: "pay",
+      baseFormSf: "pay.mp3",
+      pastForm: "paid",
+      pastFormSf: "paid.mp3"
+     },
+     {
+      baseForm: "put",
+      baseFormSf: "put.mp3",
+      pastForm: "put",
+      pastFormSf: "put.mp3"
+     },
+     {
+      baseForm: "read",
+      baseFormSf: "read(base).mp3",
+      pastForm: "read",
+      pastFormSf: "read(simplepast).mp3"
+     },
+     {
+      baseForm: "ride",
+      baseFormSf: "ride.mp3",
+      pastForm: "rode",
+      pastFormSf: "rode.mp3"
+     },
+     {
+      baseForm: "run",
+      baseFormSf: "run.mp3",
+      pastForm: "ran",
+      pastFormSf: "ran.mp3"
+     },
+     {
+      baseForm: "say",
+      baseFormSf: "say.mp3",
+      pastForm: "said",
+      pastFormSf: "said.mp3"
+     },
+     {
+      baseForm: "see",
+      baseFormSf: "see.mp3",
+      pastForm: "saw",
+      pastFormSf: "saw.mp3"
+     },
+     {
+      baseForm: "sell",
+      baseFormSf: "sell.mp3",
+      pastForm: "sold",
+      pastFormSf: "sold.mp3"
+     },
+     {
+      baseForm: "send",
+      baseFormSf: "send.mp3",
+      pastForm: "sent",
+      pastFormSf: "sent.mp3"
+     },
+     {
+      baseForm: "set",
+      baseFormSf: "set.mp3",
+      pastForm: "set",
+      pastFormSf: "set.mp3"
+     },
+     {
+      baseForm: "shut",
+      baseFormSf: "shut.mp3",
+      pastForm: "shut",
+      pastFormSf: "shut.mp3"
+     },
+     {
+      baseForm: "sing",
+      baseFormSf: "sing.mp3",
+      pastForm: "sang",
+      pastFormSf: "sang.mp3"
+     },
+     {
+      baseForm: "sit",
+      baseFormSf: "sit.mp3",
+      pastForm: "sat",
+      pastFormSf: "sat.mp3"
+     },
+     {
+      baseForm: "sleep",
+      baseFormSf: "sleep.mp3",
+      pastForm: "slept",
+      pastFormSf: "slept.mp3"
+     },
+     {
+      baseForm: "speak",
+      baseFormSf: "speak.mp3",
+      pastForm: "spoke",
+      pastFormSf: "spoke.mp3"
+     },
+     {
+      baseForm: "spend",
+      baseFormSf: "spend.mp3",
+      pastForm: "spent",
+      pastFormSf: "spent.mp3"
+     },
+     {
+      baseForm: "steal",
+      baseFormSf: "steal.mp3",
+      pastForm: "stole",
+      pastFormSf: "stole.mp3"
+     },
+     {
+      baseForm: "swim",
+      baseFormSf: "swim.mp3",
+      pastForm: "swam",
+      pastFormSf: "swam.mp3"
+     },
+     {
+      baseForm: "take",
+      baseFormSf: "take.mp3",
+      pastForm: "took",
+      pastFormSf: "took.mp3"
+     },
+     {
+      baseForm: "teach",
+      baseFormSf: "teach.mp3",
+      pastForm: "taught",
+      pastFormSf: "taught.mp3"
+     },
+     {
+      baseForm: "tell",
+      baseFormSf: "tell.mp3",
+      pastForm: "told",
+      pastFormSf: "told.mp3"
+     },
+     {
+      baseForm: "think",
+      baseFormSf: "think.mp3",
+      pastForm: "thought",
+      pastFormSf: "thought.mp3"
+     },
+     {
+      baseForm: "throw",
+      baseFormSf: "throw.mp3",
+      pastForm: "threw",
+      pastFormSf: "threw.mp3"
+     },
+     {
+      baseForm: "understand",
+      baseFormSf: "understand.mp3",
+      pastForm: "understood",
+      pastFormSf: "understood.mp3"
+     },
+     {
+      baseForm: "wake",
+      baseFormSf: "wake.mp3",
+      pastForm: "woke",
+      pastFormSf: "woke.mp3"
+     },
+     {
+      baseForm: "wear",
+      baseFormSf: "wear.mp3",
+      pastForm: "wore",
+      pastFormSf: "wore.mp3"
+     },
+     {
+      baseForm: "win",
+      baseFormSf: "win.mp3",
+      pastForm: "won",
+      pastFormSf: "won.mp3"
+     },
+     {
+      baseForm: "write",
+      baseFormSf: "write.mp3",
+      pastForm: "wrote",
+      pastFormSf: "wrote.mp3"
      }
 ]
 
