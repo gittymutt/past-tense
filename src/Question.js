@@ -91,24 +91,24 @@ export default function Question() {
         */}
             <button 
                 onClick={() => playAudioElement(
-                    document.getElementsByClassName(d.baseForm)[0])} 
+                    document.getElementsByClassName(d.baseFormSf)[0])} 
             >
                 Play {d.baseForm}
             </button>
             <button 
                 onClick={() => playAudioElement(
-                    document.getElementsByClassName(d.pastForm)[0])} 
+                    document.getElementsByClassName(d.pastFormSf)[0])} 
             >
                 Play {d.pastForm}
             </button>
             <audio 
-                className={d.baseForm}
+                className={d.baseFormSf}
                 src={require(`./sounds/${d.baseFormSf}`)} 
             >
                 d.baseForm
             </audio>
             <audio 
-                className={d.pastForm}
+                className={d.pastFormSf}
                 src={require(`./sounds/${d.pastFormSf}`)} 
             >
                 d.pastForm
@@ -130,8 +130,8 @@ export default function Question() {
 
     
 
-    // let currentQuestion = questionData[qNo]
-    let currentQuestion = questionData
+    let currentQuestion = questionData[qNo]
+    // let currentQuestion = questionData
     return (
         <>
             {currentQuestion}
