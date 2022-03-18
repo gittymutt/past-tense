@@ -11,6 +11,7 @@ export default function Question() {
     const [isRegular, setIsRegular] = React.useState(true)
     const noQuestions = React.useRef(0)
 
+
     function speak(word) {
         let sound = new Audio(require(`./sounds/${word}`))
         sound.play()
@@ -66,10 +67,13 @@ export default function Question() {
     noQuestions.current = filteredData.length
 
     let questionData = filteredData.map((d) => {
-    let id = nextId("q")
-        
+    const id = nextId("q")
+    const baseId = id+"base"
+    const pastId = id+"past"
+    const recId = id+"rec"
+
     return (
-        <>
+        <div key={id}>
         <h1>Question {qNo+1}</h1>
         <p>{isRegular ? "Regular" : "Irregular"} verbs</p>
         <div className="next-buttons-group">
@@ -84,45 +88,50 @@ export default function Question() {
             }
             
         </div>
-        <section key={id} className="question">
+        <section  className="question">
             {/*
             <button onClick={() => speak(d.baseFormSf)} >{d.baseForm}</button>
             <button onClick={() => speak(d.pastFormSf)}>{d.pastForm}</button>
         */}
             <button 
                 onClick={() => playAudioElement(
-                    document.getElementsByClassName(d.baseFormSf)[0])} 
+                    // document.getElementsByClassName(d.baseFormSf)[0])} 
+                    document.getElementsByClassName(baseId)[0])} 
+
             >
                 Play {d.baseForm}
             </button>
             <button 
                 onClick={() => playAudioElement(
-                    document.getElementsByClassName(d.pastFormSf)[0])} 
+                    document.getElementsByClassName(pastId)[0])} 
             >
                 Play {d.pastForm}
             </button>
             <audio 
-                className={d.baseFormSf}
+                // className={d.baseFormSf}
+                className={baseId}
+
                 src={require(`./sounds/${d.baseFormSf}`)} 
             >
                 d.baseForm
             </audio>
             <audio 
-                className={d.pastFormSf}
+                // className={d.pastFormSf}
+                className={pastId}
                 src={require(`./sounds/${d.pastFormSf}`)} 
             >
                 d.pastForm
             </audio>
             
 
-            <Recorder />
+            <Recorder id={recId}/>
         </section>
         <input onChange={chooseVerbType} type="radio" id="regular" name="isRegular" value="regular" />
         <label htmlFor="regular">Regular Verbs</label>
         <input onChange={chooseVerbType} type="radio" id="irregular" name="isRegular" value="irregular" />
         <label htmlFor="irregular">Irregular</label>
                 
-        </>
+        </div>
     )
     })
 

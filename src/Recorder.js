@@ -1,7 +1,7 @@
 import React from "react"
 import './Recorder.css'
 
-export default function Recorder() {
+export default function Recorder(props) {
     const [recordOn, setRecordOn] = React.useState(false)
     const [isRecorded, setIsRecorded] = React.useState(false)
     const [isPlaying, setIsPlaying] = React.useState(false)
@@ -58,7 +58,7 @@ export default function Recorder() {
     }
 
     return (
-        <>
+        <div key={props.id}>
           <p className="button-container">
               <button  
                 className={
@@ -79,6 +79,6 @@ export default function Recorder() {
                   {isPlaying ? "Playing..." : "Play"}
               </button>
           </p>
-        </>
+        </div>
     )
 }
