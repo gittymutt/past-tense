@@ -89,13 +89,8 @@ export default function Question() {
             
         </div>
         <section  className="question">
-            {/*
-            <button onClick={() => speak(d.baseFormSf)} >{d.baseForm}</button>
-            <button onClick={() => speak(d.pastFormSf)}>{d.pastForm}</button>
-        */}
             <button 
                 onClick={() => playAudioElement(
-                    // document.getElementsByClassName(d.baseFormSf)[0])} 
                     document.getElementsByClassName(baseId)[0])} 
 
             >
@@ -108,7 +103,6 @@ export default function Question() {
                 {d.pastForm}
             </button>
             <audio 
-                // className={d.baseFormSf}
                 className={baseId}
 
                 src={require(`./sounds/${d.baseFormSf}`)} 
@@ -116,7 +110,6 @@ export default function Question() {
                 d.baseForm
             </audio>
             <audio 
-                // className={d.pastFormSf}
                 className={pastId}
                 src={require(`./sounds/${d.pastFormSf}`)} 
             >
