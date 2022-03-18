@@ -57,6 +57,11 @@ export default function Question() {
         }
     }
 
+    function playAudioElement(e) {
+        console.log(e)
+        e.play()
+    }
+
     let filteredData = data.filter(removeEd)
     noQuestions.current = filteredData.length
 
@@ -80,8 +85,36 @@ export default function Question() {
             
         </div>
         <section key={id} className="question">
+            {/*
             <button onClick={() => speak(d.baseFormSf)} >{d.baseForm}</button>
             <button onClick={() => speak(d.pastFormSf)}>{d.pastForm}</button>
+        */}
+            <button 
+                onClick={() => playAudioElement(
+                    document.getElementsByClassName(d.baseForm)[0])} 
+            >
+                Play {d.baseForm}
+            </button>
+            <button 
+                onClick={() => playAudioElement(
+                    document.getElementsByClassName(d.pastForm)[0])} 
+            >
+                Play {d.pastForm}
+            </button>
+            <audio 
+                className={d.baseForm}
+                src={require(`./sounds/${d.baseFormSf}`)} 
+            >
+                d.baseForm
+            </audio>
+            <audio 
+                className={d.pastForm}
+                src={require(`./sounds/${d.pastFormSf}`)} 
+            >
+                d.pastForm
+            </audio>
+            
+
             <Recorder />
         </section>
         <input onChange={chooseVerbType} type="radio" id="regular" name="isRegular" value="regular" />
@@ -97,7 +130,8 @@ export default function Question() {
 
     
 
-    let currentQuestion = questionData[qNo]
+    // let currentQuestion = questionData[qNo]
+    let currentQuestion = questionData
     return (
         <>
             {currentQuestion}
