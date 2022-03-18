@@ -99,13 +99,13 @@ export default function Question() {
                     document.getElementsByClassName(baseId)[0])} 
 
             >
-                Play {d.baseForm}
+                {d.baseForm}
             </button>
             <button 
                 onClick={() => playAudioElement(
                     document.getElementsByClassName(pastId)[0])} 
             >
-                Play {d.pastForm}
+                {d.pastForm}
             </button>
             <audio 
                 // className={d.baseFormSf}
