@@ -107,13 +107,11 @@ export default function Question() {
 
                 src={require(`./sounds/${d.baseFormSf}`)} 
             >
-                d.baseForm
             </audio>
             <audio 
                 className={pastId}
                 src={require(`./sounds/${d.pastFormSf}`)} 
             >
-                d.pastForm
             </audio>
             
 
