@@ -50,7 +50,11 @@ export default function Recorder(props) {
           console.log("audio element: " + audioElement.current.src)
           console.log("added ended listener: " + hasEndedListener.current)
           if (!hasEndedListener.current) {
-            audio.current.addEventListener('ended', () => {
+            console.log("adding hasEndedListener")
+            // audio.current.addEventListener('ended', () => {
+              audioElement.current.addEventListener('ended', () => {
+
+              console.log("isplaying set to false")
               setIsPlaying(false)
               hasEndedListener.current = true
             })

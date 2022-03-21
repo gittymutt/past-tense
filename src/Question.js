@@ -59,7 +59,6 @@ export default function Question() {
     }
 
     function playAudioElement(e) {
-        console.log(e)
         e.play()
     }
 
@@ -90,17 +89,15 @@ export default function Question() {
         </div>
         <section  className="question">
             <button 
-                onClick={() => playAudioElement(
-                    document.getElementsByClassName(baseId)[0])} 
-
+                onClick={() => playAudioElement(document.getElementsByClassName(baseId)[0])} 
             >
-                {d.baseForm}
+               {d.baseForm}
             </button>
             <button 
                 onClick={() => playAudioElement(
                     document.getElementsByClassName(pastId)[0])} 
             >
-                {d.pastForm}
+               {d.pastForm}
             </button>
             <audio 
                 className={baseId}
