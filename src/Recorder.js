@@ -1,6 +1,13 @@
 import React from "react"
 import './Recorder.css'
 
+// 
+//   record sometimes does not work. Seems to stutter or not mak
+//   e sound at all.
+//
+//
+//
+
 export default function Recorder(props) {
     const [recordOn, setRecordOn] = React.useState(false)
     const [isRecorded, setIsRecorded] = React.useState(false)
@@ -10,16 +17,18 @@ export default function Recorder(props) {
     const rec = React.useRef(null)
     const audio = React.useRef(null)
     const hasEndedListener = React.useRef(false)
+    const audioElement = React.useRef()
 
     React.useEffect(() => {
-
+      audioElement.current = document.getElementsByClassName(props.id)[0]
+      console.log("Suido element in the useeffect: " + audioElement)
       navigator.mediaDevices.getUserMedia({audio:true})
         .then(stream => {handlerFunction(stream)})
         .catch(e => alert("There was an error with the audio: " + e.name +
               "\n" + e.message))
-        
         function handlerFunction(stream) {
             rec.current = new MediaRecorder(stream);
+            console.log("creating mediarecord object")
             rec.current.ondataavailable = e => {
               let audioChunks = []
               audioChunks.push(e.data);
@@ -35,6 +44,10 @@ export default function Recorder(props) {
           const audioUrl = URL.createObjectURL(blob)
           setIsRecorded(true)
           audio.current = new Audio(audioUrl);
+          
+          
+          audioElement.current.src = audioUrl
+          console.log("audio element: " + audioElement.current.src)
           console.log("added ended listener: " + hasEndedListener.current)
           if (!hasEndedListener.current) {
             audio.current.addEventListener('ended', () => {
@@ -62,7 +75,8 @@ export default function Recorder(props) {
 
     function playSample() {
       setIsPlaying(true)
-      audio.current.play()
+      // audio.current.play()
+      audioElement.current.play()
       
     }
 

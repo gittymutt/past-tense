@@ -114,7 +114,7 @@ export default function Question() {
             >
             </audio>
             
-
+                   
             <Recorder id={recId}/>
         </section>
         <input onChange={chooseVerbType} type="radio" id="regular" name="isRegular" value="regular" />
@@ -130,8 +130,8 @@ export default function Question() {
 
     
 
-    let currentQuestion = questionData[qNo]
-    // let currentQuestion = questionData
+    // let currentQuestion = questionData[qNo]
+    let currentQuestion = questionData
     return (
         <>
             {currentQuestion}
