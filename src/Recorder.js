@@ -2,9 +2,9 @@ import React from "react"
 import './Recorder.css'
 
 // 
-//   record sometimes does not work. Seems to stutter or not mak
-//   e sound at all.
-//
+//   create MediaRecorder obj in App?
+//   can it be passed to Record?
+//    Don't need useRefs
 //
 //
 
@@ -13,15 +13,14 @@ export default function Recorder(props) {
     const [isRecorded, setIsRecorded] = React.useState(false)
     const [isPlaying, setIsPlaying] = React.useState(false)
 
-    const recordedAudio = React.useRef(null)
+    // const recordedAudio = React.useRef(null)
     const rec = React.useRef(null)
-    const audio = React.useRef(null)
+    const audio = React.useRef(null);
     const hasEndedListener = React.useRef(false)
     const audioElement = React.useRef()
 
     React.useEffect(() => {
       audioElement.current = document.getElementsByClassName(props.id)[0]
-      console.log("Suido element in the useeffect: " + audioElement)
       navigator.mediaDevices.getUserMedia({audio:true})
         .then(stream => {handlerFunction(stream)})
         .catch(e => alert("There was an error with the audio: " + e.name +
