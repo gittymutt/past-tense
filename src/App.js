@@ -29,14 +29,9 @@ function App() {
     }
   }
   
-  function printStream() {
-    console.log(`Stream from App.js is:${stream}`)  
-  }
-
   return (
     <div className="App">
       <Question stream={stream} />
-      <button onClick={printStream}>Get mediastream</button>
     </div>
   );
 }

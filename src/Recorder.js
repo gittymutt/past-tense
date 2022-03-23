@@ -10,85 +10,124 @@ import './Recorder.css'
 
 export default function Recorder(props) {
   
-    // const [recordOn, setRecordOn] = React.useState(false)
-    // const [isRecorded, setIsRecorded] = React.useState(false)
-    // const [isPlaying, setIsPlaying] = React.useState(false)
-
-    // // const recordedAudio = React.useRef(null)
-    // const rec = React.useRef(null)
+    const [recordOn, setRecordOn] = React.useState(false)
+    const [isRecorded, setIsRecorded] = React.useState(false)
+    const [isPlaying, setIsPlaying] = React.useState(false)
+    
+    // const recordedAudio = React.useRef(null)
+    const rec = React.useRef(null)
     // const audio = React.useRef(null);
-    // const hasEndedListener = React.useRef(false)
-    // const audioElement = React.useRef()
+    const hasEndedListener = React.useRef(false)
+    const audioElement = React.useRef()
 
     // React.useEffect(() => {
-    //   audioElement.current = document.getElementsByClassName(props.id)[0]
-    //   navigator.mediaDevices.getUserMedia({audio:true})
-    //     .then(stream => {handlerFunction(stream)})
-    //     .catch(e => alert("There was an error with the audio: " + e.name +
-    //           "\n" + e.message))
-    //     function handlerFunction(stream) {
-    //         rec.current = new MediaRecorder(stream);
-    //         console.log("creating mediarecord object")
-    //         rec.current.ondataavailable = e => {
-    //           let audioChunks = []
-    //           audioChunks.push(e.data);
-    //           if (rec.current.state === "inactive"){
-    //             hasEndedListener.current = false
-    //             let blob = new Blob(audioChunks,{type:'audio/mp3'});
-    //             sendData(blob)
-    //           }
-    //         }
-    //     }
+      
+      // navigator.mediaDevices.getUserMedia({audio:true})
+      //   .then(stream => {handlerFunction(stream)})
+      //   .catch(e => alert("There was an error with the audio: " + e.name +
+      //         "\n" + e.message))
 
-    //     function sendData(blob) {
-    //       const audioUrl = URL.createObjectURL(blob)
-    //       setIsRecorded(true)
-    //       audio.current = new Audio(audioUrl);
+      // console.log(`rec: ${rec.current}`)
+      // if (props.stream) {handlerFunction(props.stream)}
+        // function handlerFunction(stream) {
+        //     console.log(`stream from Recorder: ${stream}. From App: ${props.stream} from rec.current: ${rec.current}`)
+        //     if (!rec.current) rec.current = new MediaRecorder(stream);
+        //     console.log("creating mediarecord object")
+        //     rec.current.ondataavailable = e => {
+
+        //       let audioChunks = []
+        //       audioChunks.push(e.data);
+        //       if (rec.current.state === "inactive"){
+        //         hasEndedListener.current = false
+        //         let blob = new Blob(audioChunks,{type:'audio/mp3'});
+        //         sendData(blob)
+        //       }
+        //     }
+        // }
+
+        // function sendData(blob) {
+        //   const audioUrl = URL.createObjectURL(blob)
+        //   setIsRecorded(true)
+        //   // audio.current = new Audio(audioUrl);
           
-          
-    //       audioElement.current.src = audioUrl
-    //       console.log("audio element: " + audioElement.current.src)
-    //       console.log("added ended listener: " + hasEndedListener.current)
-    //       if (!hasEndedListener.current) {
-    //         console.log("adding hasEndedListener")
-    //         // audio.current.addEventListener('ended', () => {
-    //           audioElement.current.addEventListener('ended', () => {
+        //   audioElement.current = document.getElementsByClassName(props.id)[0]
+        //   audioElement.current.src = audioUrl
+        //   // console.log("audio element: " + audioElement.current.src)
+        //   // console.log("added ended listener: " + hasEndedListener.current)
+        //   if (!hasEndedListener.current) {
+        //     // console.log("adding hasEndedListener")
+        //     // audio.current.addEventListener('ended', () => {
+        //       audioElement.current.addEventListener('ended', () => {
 
-    //           console.log("isplaying set to false")
-    //           setIsPlaying(false)
-    //           hasEndedListener.current = true
-    //         })
-    //     }
+        //       // console.log("isplaying set to false")
+        //       setIsPlaying(false)
+        //       hasEndedListener.current = true
+        //     })
+        // }
 
 
-    //       // audio.current.play();
-    //       // setIsPlaying(true)
-    //     }
+        //   // audio.current.play();
+        //   // setIsPlaying(true)
+        // }
 
         
-    // }, [])
+    // }, [props.stream, props.id, rec, handlerFunction])
 
-    // let toggleRecord = () => {
-    //   if (recordOn) {
-    //     rec.current.stop();
-    //   } else {
-    //       rec.current.start();
-    //   }
-    //   setRecordOn((oldState) => !oldState)
-    // }
+    function handlerFunction() {
 
-    // function playSample() {
-    //   setIsPlaying(true)
-    //   // audio.current.play()
-    //   audioElement.current.play()
+      console.log(`stream from Recorder: ${props.stream}. From App: ${props.stream} from rec.current: ${rec.current}`)
+      if (!rec.current) rec.current = new MediaRecorder(props.stream);
+      console.log("creating mediarecord object")
+      rec.current.ondataavailable = e => {
+
+        let audioChunks = []
+        audioChunks.push(e.data);
+        if (rec.current.state === "inactive"){
+          hasEndedListener.current = false
+          let blob = new Blob(audioChunks,{type:'audio/mp3'});
+          sendData(blob)
+        }
+      }
+    }
+    function sendData(blob) {
+      const audioUrl = URL.createObjectURL(blob)
+      setIsRecorded(true)
+      // audio.current = new Audio(audioUrl);
       
-    // }
+      audioElement.current = document.getElementsByClassName(props.id)[0]
+      audioElement.current.src = audioUrl
+      // console.log("audio element: " + audioElement.current.src)
+      // console.log("added ended listener: " + hasEndedListener.current)
+      if (!hasEndedListener.current) {
+        // console.log("adding hasEndedListener")
+        // audio.current.addEventListener('ended', () => {
+          audioElement.current.addEventListener('ended', () => {
+
+          // console.log("isplaying set to false")
+          setIsPlaying(false)
+          hasEndedListener.current = true
+          })
+      }
+    }
+
+    let toggleRecord = () => {
+      handlerFunction()
+      if (recordOn) {
+        rec.current.stop();
+      } else {
+          rec.current.start();
+      }
+      setRecordOn((oldState) => !oldState)
+    }
+
+    function playSample() {
+      setIsPlaying(true)
+      audioElement.current.play()
+    }
 
     
     return (
-        <div key={props.id}>
-          {props.stream && <button>Press form stream </button>}
-          {/*
+        <div key={props.id}>          
           <p className="button-container">
               <button  
                 className={
@@ -110,7 +149,7 @@ export default function Recorder(props) {
               </button>
 
               <audio className={props.id}></audio>
-              </p>*/}
+              </p>
         </div>
     )
 }
