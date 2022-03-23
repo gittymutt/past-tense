@@ -6,7 +6,7 @@ import data from "./data.js"
 
 // https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder
 
-export default function Question() {
+export default function Question(props) {
     const [qNo, setQNo] = React.useState(0)
     const [isRegular, setIsRegular] = React.useState(true)
     const noQuestions = React.useRef(0)
@@ -111,8 +111,7 @@ export default function Question() {
             >
             </audio>
             
-                   
-            <Recorder id={recId}/>
+            <Recorder id={recId} stream={props.stream} />
         </section>
         <input onChange={chooseVerbType} type="radio" id="regular" name="isRegular" value="regular" />
         <label htmlFor="regular">Regular Verbs</label>
