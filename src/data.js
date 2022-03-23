@@ -170,12 +170,6 @@ const data = [
         pastFormSf: "lived.mp3"
      },
      {
-        baseForm: "shake",
-        baseFormSf: "shake.mp3",
-        pastForm: "shook",
-        pastFormSf: "shook.mp3"
-     },
-     {
         baseForm: "become",
         baseFormSf: "become.mp3",
         pastForm: "became",
@@ -486,6 +480,12 @@ const data = [
       baseFormSf: "set.mp3",
       pastForm: "set",
       pastFormSf: "set.mp3"
+     },
+     {
+        baseForm: "shake",
+        baseFormSf: "shake.mp3",
+        pastForm: "shook",
+        pastFormSf: "shook.mp3"
      },
      {
       baseForm: "shut",
