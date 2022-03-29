@@ -1,5 +1,7 @@
 import React from "react"
 import './Recorder.css'
+import PlayIcon from "./svg/PlayIcon"
+import RecordIcon from './svg/RecordIcon'
 
 export default function Recorder(props) {
   
@@ -65,15 +67,14 @@ export default function Recorder(props) {
                 } 
                 onClick={toggleRecord}
               >
-                
-                <svg fill="#AB7C94" xmlns="http://www.w3.org/2000/svg" viewBox="10 0 384 512"><path d="M192 352c53.03 0 96-42.97 96-96v-160c0-53.03-42.97-96-96-96s-96 42.97-96 96v160C96 309 138.1 352 192 352zM344 192C330.7 192 320 202.7 320 215.1V256c0 73.33-61.97 132.4-136.3 127.7c-66.08-4.169-119.7-66.59-119.7-132.8L64 215.1C64 202.7 53.25 192 40 192S16 202.7 16 215.1v32.15c0 89.66 63.97 169.6 152 181.7V464H128c-18.19 0-32.84 15.18-31.96 33.57C96.43 505.8 103.8 512 112 512h160c8.222 0 15.57-6.216 15.96-14.43C288.8 479.2 274.2 464 256 464h-40v-33.77C301.7 418.5 368 344.9 368 256V215.1C368 202.7 357.3 192 344 192z"/></svg>
+                <RecordIcon />
                 <span>{recordOn ? "Stop" : "Record"}</span>
               </button>
               <button
                 className={`button-icon ${isRecorded ? "" : "play-button-hide"}
                 ${isPlaying ? "play-on" : ""}`} 
                 onClick={playSample}>
-                   <svg  xmlns="http://www.w3.org/2000/svg" viewBox="10 0 384 512"><path d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z"/></svg>
+                  <PlayIcon />
                   {isPlaying ? "Playing..." : "Play"}
               </button>
 
