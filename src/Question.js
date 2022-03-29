@@ -66,9 +66,9 @@ export default function Question(props) {
 
     return (
         <div key={id}>
-        <h1>Question {qNo+1}</h1>
-        <p>{isRegular ? "Regular" : "Irregular"} verbs</p>
-        <div className="next-buttons-group">
+        
+        
+        {/*<div className="next-buttons-group">
             <button 
                 className={`next-buttons ${qNo >= 1 ? "" : "hide-button"}`} 
                 onClick={previousQuestion}
@@ -79,8 +79,9 @@ export default function Question(props) {
                 >Next &gt;</button>
             }
             
-        </div>
+        </div> */}
         <section  className="question">
+        <h1>{d.baseForm}</h1>
             <button 
                 onClick={() => playAudioElement(document.getElementsByClassName(baseId)[0])} 
             >
@@ -106,10 +107,7 @@ export default function Question(props) {
             
             <Recorder id={recId} stream={props.stream} />
         </section>
-        <input onChange={chooseVerbType} type="radio" id="regular" name="isRegular" value="regular" />
-        <label htmlFor="regular">Regular Verbs</label>
-        <input onChange={chooseVerbType} type="radio" id="irregular" name="isRegular" value="irregular" />
-        <label htmlFor="irregular">Irregular</label>
+        
                 
         </div>
     )
@@ -119,6 +117,11 @@ export default function Question(props) {
     let currentQuestion = questionData
     return (
         <>
+            <h1>{isRegular ? "Regular" : "Irregular"} verbs</h1>
+            <input onChange={chooseVerbType} type="radio" id="regular" name="isRegular" value="regular" />
+            <label htmlFor="regular">Regular Verbs</label>
+            <input onChange={chooseVerbType} type="radio" id="irregular" name="isRegular" value="irregular" />
+            <label htmlFor="irregular">Irregular</label>
             {currentQuestion}
         </>
     )

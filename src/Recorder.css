@@ -12,8 +12,9 @@
 }
 
 .button-icon svg   {
-    width: 4em;
+    width: 2em;
     margin-bottom: 10px;
+    text-align: center;
     /* max-height: 100px; */
 }
 

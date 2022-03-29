@@ -68,14 +68,14 @@ export default function Recorder(props) {
                 onClick={toggleRecord}
               >
                 <RecordIcon />
-                <span>{recordOn ? "Stop" : "Record"}</span>
+                <span>{recordOn ? "Stop" : "Rec"}</span>
               </button>
               <button
                 className={`button-icon ${isRecorded ? "" : "play-button-hide"}
                 ${isPlaying ? "play-on" : ""}`} 
                 onClick={playSample}>
                   <PlayIcon />
-                  {isPlaying ? "Playing..." : "Play"}
+                  {isPlaying ? "..." : "Play"}
               </button>
 
               <audio className={props.id}></audio>
