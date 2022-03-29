@@ -51,12 +51,27 @@ export default function Question(props) {
         }
     }
 
+    function alphabetize(words) {
+        return words.sort(function(a, b) {
+            let nameA = a.baseForm.toUpperCase(); // ignore upper and lowercase
+            let nameB = b.baseForm.toUpperCase(); // ignore upper and lowercase
+            if (nameA < nameB) {
+              return -1; //nameA comes first
+            }
+            if (nameA > nameB) {
+              return 1; // nameB comes first
+            }
+            return 0;  // names must be equal
+          })
+    } 
+
     function playAudioElement(e) {
         e.play()
     }
 
     let filteredData = data.filter(removeEd)
-    
+    filteredData = alphabetize(filteredData)
+
     noQuestions.current = filteredData.length
 
     let questionData = filteredData.map((d) => {
