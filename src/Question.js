@@ -11,12 +11,6 @@ export default function Question(props) {
     const [isRegular, setIsRegular] = React.useState(true)
     const noQuestions = React.useRef(0)
 
-
-    function speak(word) {
-        let sound = new Audio(require(`./sounds/${word}`))
-        sound.play()
-    }
-
     function nextQuestion() {
         setQNo((oldValue) => {
             if (oldValue < noQuestions.current-1) {
@@ -25,7 +19,6 @@ export default function Question(props) {
                 return oldValue
             }
         })
-           
     }
 
     function previousQuestion() {
@@ -121,10 +114,6 @@ export default function Question(props) {
         </div>
     )
     })
-
-    
-
-    
 
     // let currentQuestion = questionData[qNo]
     let currentQuestion = questionData
