@@ -11,7 +11,7 @@ export default function Question(props) {
     const [isRegular, setIsRegular] = React.useState(true)
     const noQuestions = React.useRef(0)
 
-    function nextQuestion() {
+    {/*function nextQuestion() {
         setQNo((oldValue) => {
             if (oldValue < noQuestions.current-1) {
                 return oldValue+1
@@ -30,7 +30,7 @@ export default function Question(props) {
             }
         })
     }
-
+*/}
     function chooseVerbType(e) {
         console.log(e.target.name, e.target.value)
         if (e.target.value ==="regular") {
@@ -56,6 +56,7 @@ export default function Question(props) {
     }
 
     let filteredData = data.filter(removeEd)
+    
     noQuestions.current = filteredData.length
 
     let questionData = filteredData.map((d) => {
