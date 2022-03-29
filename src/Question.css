@@ -10,11 +10,14 @@ button {
     font-size: 4vh;
 }
 
+.regular-checkbox {
+    margin-right: 30px;
+}
 .question {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 10% auto;
+    margin: 30px auto;
     max-width: 500px;
     border: black solid 1px;
     border-radius: 10px;;
@@ -27,6 +30,20 @@ button {
 
 .question button {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.baseform-button {
+
+}
+
+.baseform-button svg {
+    width: 25px;
+    margin-left: 20px;
+    text-align: center;
 }
 
 .question > button:first-of-type {

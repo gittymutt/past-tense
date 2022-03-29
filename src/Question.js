@@ -3,6 +3,7 @@ import Recorder from "./Recorder"
 import nextId from "react-id-generator";
 import './Question.css'
 import data from "./data.js"
+import PlayIcon from "./svg/PlayIcon";
 
 // https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder
 
@@ -97,11 +98,11 @@ export default function Question(props) {
             
         </div> */}
         <section  className="question">
-        <h1>{d.baseForm}</h1>
             <button 
+                className="baseform-button"
                 onClick={() => playAudioElement(document.getElementsByClassName(baseId)[0])} 
             >
-               {d.baseForm}
+               {d.baseForm} 
             </button>
             <button 
                 onClick={() => playAudioElement(
@@ -135,9 +136,9 @@ export default function Question(props) {
         <>
             <h1>{isRegular ? "Regular" : "Irregular"} verbs</h1>
             <input onChange={chooseVerbType} type="radio" id="regular" name="isRegular" value="regular" />
-            <label htmlFor="regular">Regular Verbs</label>
+            <label className="regular-checkbox" htmlFor="regular">Regular Verbs</label>
             <input onChange={chooseVerbType} type="radio" id="irregular" name="isRegular" value="irregular" />
-            <label htmlFor="irregular">Irregular</label>
+            <label htmlFor="irregular">Irregular Verbs</label>
             {currentQuestion}
         </>
     )
