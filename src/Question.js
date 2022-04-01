@@ -103,13 +103,9 @@ export default function Question(props) {
         <>
             <Header 
                 isRegular={isRegular}
-
+                chooseVerbType={chooseVerbType}
             />
 
-            <input onChange={chooseVerbType} type="radio" id="regular" name="isRegular" value="regular" />
-            <label className="regular-checkbox" htmlFor="regular">Regular Verbs</label>
-            <input onChange={chooseVerbType} type="radio" id="irregular" name="isRegular" value="irregular" />
-            <label htmlFor="irregular">Irregular Verbs</label>
             {currentQuestion}
         </>
     )
