@@ -105,8 +105,9 @@ export default function Question(props) {
                 isRegular={isRegular}
                 chooseVerbType={chooseVerbType}
             />
-
-            {currentQuestion}
+            <div className="question-container">
+                {currentQuestion}
+            </div>
         </>
     )
 }

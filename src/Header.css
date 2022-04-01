@@ -1,0 +1,15 @@
+header {
+    background-color: pink;
+    position: fixed;
+    /* margin: 0; */
+    width: 100%;
+    top: 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+body {
+    margin-top: 0 !important;
+}

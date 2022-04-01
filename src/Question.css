@@ -27,7 +27,9 @@ button {
 .question h1 {
     text-transform: uppercase;
 }
-
+.question-container {
+    margin-top: 70px;
+}
 .question button {
     padding: 20px;
     display: flex;
