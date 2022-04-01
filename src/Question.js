@@ -4,6 +4,7 @@ import nextId from "react-id-generator";
 import './Question.css'
 import data from "./data.js"
 import PlayIcon from "./svg/PlayIcon";
+import Header from "./Header"
 
 // https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder
 
@@ -12,26 +13,6 @@ export default function Question(props) {
     const [isRegular, setIsRegular] = React.useState(true)
     const noQuestions = React.useRef(0)
 
-    {/*function nextQuestion() {
-        setQNo((oldValue) => {
-            if (oldValue < noQuestions.current-1) {
-                return oldValue+1
-            } else {
-                return oldValue
-            }
-        })
-    }
-
-    function previousQuestion() {
-        setQNo((oldValue) => {
-            if (qNo >= 1) {
-                return oldValue-1
-            } else {
-                return oldValue
-            }
-        })
-    }
-*/}
     function chooseVerbType(e) {
         console.log(e.target.name, e.target.value)
         if (e.target.value ==="regular") {
@@ -83,20 +64,6 @@ export default function Question(props) {
 
     return (
         <div key={id}>
-        
-        
-        {/*<div className="next-buttons-group">
-            <button 
-                className={`next-buttons ${qNo >= 1 ? "" : "hide-button"}`} 
-                onClick={previousQuestion}
-            >&lt; Back</button>
-            {<button 
-                className={`next-buttons ${qNo < noQuestions.current-1 ? "" : "hide-button"}`}  
-                onClick={nextQuestion}
-                >Next &gt;</button>
-            }
-            
-        </div> */}
         <section  className="question">
             <button 
                 className="baseform-button"
@@ -134,7 +101,11 @@ export default function Question(props) {
     let currentQuestion = questionData
     return (
         <>
-            <h1>{isRegular ? "Regular" : "Irregular"} verbs</h1>
+            <Header 
+                isRegular={isRegular}
+
+            />
+
             <input onChange={chooseVerbType} type="radio" id="regular" name="isRegular" value="regular" />
             <label className="regular-checkbox" htmlFor="regular">Regular Verbs</label>
             <input onChange={chooseVerbType} type="radio" id="irregular" name="isRegular" value="irregular" />
