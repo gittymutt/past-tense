@@ -3,14 +3,14 @@ import Recorder from "./Recorder"
 import nextId from "react-id-generator";
 import './Question.css'
 import data from "./data.js"
-import PlayIcon from "./svg/PlayIcon";
+import SpeakerIcon from "./svg/SpeakerIcon";
 import Header from "./Header"
 
 // https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder
 
 export default function Question(props) {
     const [qNo, setQNo] = React.useState(0)
-    const [isRegular, setIsRegular] = React.useState(true)
+    const [isRegular, setIsRegular] = React.useState(false)
     const noQuestions = React.useRef(0)
     const [searchString, setSearchString] = React.useState("")
 
@@ -73,16 +73,17 @@ export default function Question(props) {
         <div key={id}>
         <section  className="question">
             <button 
-                className="baseform-button"
+                className="verb-button"
                 onClick={() => playAudioElement(document.getElementsByClassName(baseId)[0])} 
             >
-               {d.baseForm} 
+               {d.baseForm} <SpeakerIcon />
             </button>
-            <button 
+            <button
+                className="verb-button"
                 onClick={() => playAudioElement(
                     document.getElementsByClassName(pastId)[0])} 
             >
-               {d.pastForm}
+               {d.pastForm} <SpeakerIcon />
             </button>
             <audio 
                 className={baseId}
