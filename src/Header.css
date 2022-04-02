@@ -1,10 +1,10 @@
 header {
-    background-color: pink;
+    background-color: rgb(106, 146, 169);
     position: fixed;
     /* margin: 0; */
     width: 100%;
     top: 0;
-    text-align: initial;
+    /* text-align: initial; */
 }
 
 header h1 {
@@ -13,14 +13,17 @@ header h1 {
     text-align: center;
 }
 
-body {
-    margin-top: 0 !important;
+.controls-container {
+    display: flex;
+    width: 300px;
+    margin: auto;
+    padding: 5px;
+    justify-content: space-around;
 }
 
 .search-box {
     position: relative;
-    top: 0px;
-    
+
     max-width: 400px;
     height: 20px;
 }
