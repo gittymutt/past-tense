@@ -6,6 +6,9 @@ header {
     top: 0;
     height: 100px;
     /* text-align: initial; */
+    box-shadow: -1px 6px 5px 0px rgba(0,0,0,0.58);
+    -webkit-box-shadow: -1px 6px 5px 0px rgba(0,0,0,0.58);
+    -moz-box-shadow: -1px 6px 5px 0px rgba(0,0,0,0.58);
 }
 
 header h1 {
@@ -16,15 +19,15 @@ header h1 {
 
 .controls-container {
     display: flex;
-    width: 300px;
+    max-width: 400px;
     margin: auto;
     padding: 5px;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .search-box {
     position: relative;
 
-    max-width: 400px;
+    max-width: 200px;
     height: 20px;
 }

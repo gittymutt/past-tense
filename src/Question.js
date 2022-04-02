@@ -116,7 +116,7 @@ export default function Question(props) {
             />
            
             <div className="question-container">
-                <h1>{currentQuestion < 1 ? "No words found. Try again." : ""}</h1>
+                <h1>{currentQuestion < 1 ? "No words found. Please change your search." : ""}</h1>
                 {currentQuestion}
             </div>
         </>
