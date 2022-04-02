@@ -13,7 +13,7 @@ export default function Header(props) {
                 <div>
                     <input onChange={props.chooseVerbType} type="radio" id="regular" name="isRegular" value="regular" />
                     <label className="regular-checkbox" htmlFor="regular">-ed Verbs</label><br />
-                    <input checked onChange={props.chooseVerbType} type="radio" id="irregular" name="isRegular" value="irregular" />
+                    <input  onChange={props.chooseVerbType} type="radio" id="irregular" name="isRegular" value="irregular" />
                     <label htmlFor="irregular">Irregular Verbs </label>
                 </div>
                 <input onChange={search} placeholder="search" className="search-box" type="text"></input>

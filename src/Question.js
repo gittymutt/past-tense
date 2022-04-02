@@ -9,7 +9,6 @@ import Header from "./Header"
 // https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder
 
 export default function Question(props) {
-    const [qNo, setQNo] = React.useState(0)
     const [isRegular, setIsRegular] = React.useState(false)
     const noQuestions = React.useRef(0)
     const [searchString, setSearchString] = React.useState("")
@@ -21,7 +20,6 @@ export default function Question(props) {
         } else {
             setIsRegular(false)
         }
-        setQNo(0)
     }
 
     function removeEd(word) {
@@ -49,9 +47,11 @@ export default function Question(props) {
     } 
 
     function filterWords(words) {
-        return words.filter(word => word.baseForm.includes(searchString) ||
-                                    word.pastForm.includes(searchString))
-    }
+        // return words.filter(word => word.baseForm.includes(searchString) ||
+        //                             word.pastForm.includes(searchString))
+        return words.filter(word => word.baseForm.match(`^${searchString}`) ||
+                                    word.pastForm.match(`^${searchString}`))
+}
 
     function playAudioElement(e) {
         e.play()
@@ -116,6 +116,7 @@ export default function Question(props) {
             />
            
             <div className="question-container">
+                <h1>{currentQuestion < 1 ? "No words found. Try again." : ""}</h1>
                 {currentQuestion}
             </div>
         </>
