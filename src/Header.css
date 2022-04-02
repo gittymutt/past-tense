@@ -4,27 +4,23 @@ header {
     /* margin: 0; */
     width: 100%;
     top: 0;
+    text-align: initial;
 }
 
 header h1 {
     margin: 0;
     font-size: 1em;
+    text-align: center;
 }
 
 body {
     margin-top: 0 !important;
 }
 
-.letter-list  {
-    list-style-type: none;
-    position: fixed;
-    /* right: 0; */
+.search-box {
+    position: relative;
     top: 0px;
-    font-size: 1.5em;
-    border: 1px solid;
-    background-color: white;
-}
-
-.letter-list {
-    padding: 5px 7px;
+    
+    max-width: 400px;
+    height: 20px;
 }

@@ -52,20 +52,6 @@ button {
     margin-bottom: 20px;
 }
 
-.next-buttons-group {
-display: flex;
-flex-direction: row;
-justify-content: center;
-
-}
-
-.next-buttons:first-child {
-    margin-right: 10%;
-}
-
-.next-buttons {
-    padding: 10px 30px;
-}
 .hide-button {
     visibility: hidden;
 }
