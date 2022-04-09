@@ -22,7 +22,7 @@ export default function Recorder(props) {
         audioChunks.push(e.data);
         if (rec.current.state === "inactive"){
           hasEndedListener.current = false
-          let blob = new Blob(audioChunks,{type:'audio/mp3'});
+          let blob = new Blob(audioChunks,{type:'audio/mp4'});
           sendData(blob)
         }
       }
@@ -46,7 +46,13 @@ export default function Recorder(props) {
       if (recordOn) {
         rec.current.stop();
       } else {
+        try {
           rec.current.start();
+        } catch (error) {
+          alert(`There has been an error. 
+          Try refreshing your browser. 
+          Error: ${error.message}`)
+        }
       }
       setRecordOn((oldState) => !oldState)
     }

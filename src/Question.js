@@ -12,6 +12,7 @@ export default function Question(props) {
     const [isRegular, setIsRegular] = React.useState(false)
     const noQuestions = React.useRef(0)
     const [searchString, setSearchString] = React.useState("")
+    const [numFound, setNumfound] = React.useState(0)
 
     function chooseVerbType(e) {
         console.log(e.target.name, e.target.value)
@@ -49,8 +50,8 @@ export default function Question(props) {
     function filterWords(words) {
         // return words.filter(word => word.baseForm.includes(searchString) ||
         //                             word.pastForm.includes(searchString))
-        return words.filter(word => word.baseForm.match(`^${searchString}`) ||
-                                    word.pastForm.match(`^${searchString}`))
+        return words.filter(word => word.baseForm.match(`^${searchString.toLowerCase()}`) ||
+                                    word.pastForm.match(`^${searchString.toLowerCase}`))
 }
 
     function playAudioElement(e) {
@@ -62,6 +63,7 @@ export default function Question(props) {
     filteredData = filterWords(filteredData)
 
     noQuestions.current = filteredData.length
+    // setNumfound(filteredData.length)
 
     let questionData = filteredData.map((d) => {
     const id = nextId("q")
@@ -113,6 +115,7 @@ export default function Question(props) {
                 isRegular={isRegular}
                 chooseVerbType={chooseVerbType}
                 setSearchString={setSearchString}
+                noFound={noQuestions}
             />
            
             <div className="question-container">

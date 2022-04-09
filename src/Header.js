@@ -4,6 +4,7 @@ import "./Header.css"
 export default function Header(props) {
     function search(e) {
         props.setSearchString(e.target.value)
+        console.log("no found: " + props.noFound)
     }
     
     return (
@@ -16,7 +17,10 @@ export default function Header(props) {
                     <input  onChange={props.chooseVerbType} type="radio" id="irregular" name="isRegular" value="irregular" />
                     <label htmlFor="irregular">Irregular Verbs </label>
                 </div>
-                <input onChange={search} placeholder="search" className="search-box" type="text"></input>
+                <div>
+                    <input onChange={search} placeholder="search" className="search-box" type="text"></input>
+                    <p> <strong>{props.noFound.current}</strong>&nbsp;verb{props.noFound.current === 1 ? "" : "s"} found.</p>
+                </div>
             </div>
         </header>
     )
