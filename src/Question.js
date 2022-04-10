@@ -10,9 +10,12 @@ import Header from "./Header"
 
 export default function Question(props) {
     const [isRegular, setIsRegular] = React.useState(false)
-    const noQuestions = React.useRef(0)
     const [searchString, setSearchString] = React.useState("")
-    const [numFound, setNumfound] = React.useState(0)
+    // const [numFound, setNumfound] = React.useState(0)
+
+    const noQuestions = React.useRef(0)
+    // const baseAudio = React.useRef()
+    // const pastAudio = React.useRef()
 
     function chooseVerbType(e) {
         console.log(e.target.name, e.target.value)
@@ -56,6 +59,8 @@ export default function Question(props) {
 
     function playAudioElement(e) {
         e.play()
+        // e.current.play()
+
     }
 
     let filteredData = data.filter(removeEd)
@@ -75,8 +80,10 @@ export default function Question(props) {
         <div key={id}>
         <section  className="question">
             <button 
+                
                 className="verb-button"
                 onClick={() => playAudioElement(document.getElementsByClassName(baseId)[0])} 
+                // onClick={() => playAudioElement(baseAudio)}
             >
                {d.baseForm} <SpeakerIcon />
             </button>
@@ -84,6 +91,7 @@ export default function Question(props) {
                 className="verb-button"
                 onClick={() => playAudioElement(
                     document.getElementsByClassName(pastId)[0])} 
+                // onClick={() => playAudioElement(pastAudio)}
             >
                {d.pastForm} <SpeakerIcon />
             </button>

@@ -16,10 +16,10 @@ function App() {
 
 
   const getMedia = async (constraints) => {
-
-
     try {
-      setStream(await navigator.mediaDevices.getUserMedia(constraints))
+      const tempStream = await navigator.mediaDevices.getUserMedia(constraints)
+      const mediaStream = new MediaRecorder(tempStream)
+      setStream(mediaStream)
       /* use the stream */
       // console.log("Stream from getmedia: " + stream);
       // return stream;
