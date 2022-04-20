@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Question from './Question';
 import React from "react"
@@ -6,7 +6,7 @@ import React from "react"
 function App() {
   // let stream = null
   const [stream, setStream] = React.useState(null)
-
+  const [isLoading, setIsLoading] = React.useState(true)
   
 
   React.useEffect(() => {
@@ -20,6 +20,7 @@ function App() {
       const tempStream = await navigator.mediaDevices.getUserMedia(constraints)
       const mediaStream = new MediaRecorder(tempStream)
       setStream(mediaStream)
+      setIsLoading(false)
       /* use the stream */
       // console.log("Stream from getmedia: " + stream);
       // return stream;
@@ -34,9 +35,11 @@ function App() {
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"></meta>
       </head>
-      <div className="App">
+      <section className="App">
+      
+        {isLoading && <h1 className='loading-sign'>Finding Recording Device...</h1>}
         <Question stream={stream} />
-      </div>
+      </section>
     </>
   );
 }
