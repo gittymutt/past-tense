@@ -107,7 +107,7 @@ export default function Question(props) {
             >
             </audio>
             
-           {/*  <Recorder id={recId} stream={props.stream} /> */}
+           <Recorder id={recId} stream={props.stream} />
         </section>
         
                 
